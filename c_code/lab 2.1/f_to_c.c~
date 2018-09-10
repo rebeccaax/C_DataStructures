@@ -1,0 +1,13 @@
+#include <stdio.h>
+#define statements
+
+int f_to_c() {
+  for (int f  = 32; f <= 212; f+=10) {
+  printf("%7d %12.1f\n", f, (f - 32)/ (9/5));
+
+int  main() {
+  printf("%7s %12s\n","Fahrenheit", "Celsius");
+
+   
+  }
+}

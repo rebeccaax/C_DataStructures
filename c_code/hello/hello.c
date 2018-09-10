@@ -1,0 +1,7 @@
+#include <stdio.h>
+#define MSG "Hello world"
+
+int main() {
+  printf("%s\n", MSG);
+}
+

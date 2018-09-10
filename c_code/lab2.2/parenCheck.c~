@@ -1,0 +1,69 @@
+#define STACK_SIZE 100
+#include <stdio.h>
+
+char stack[STACK_SIZE];
+int sp=0;
+/*
+ * Pushes character c onto the stack.
+ * Returns 0 if successful.
+ * Returns -1 if an error occurs.  (Stack full).
+ */
+int push (char c){
+ if (sp == STACK_SIZE) {
+   return -1;
+ }
+ stack[sp++] = c;
+ return 0;
+}
+
+/*
+ * Pops next character off the stack.
+ * Returns the char if successful.
+ * Returns -1 if an error occurs.  (Stack empty).
+ */
+int pop (){
+  if (sp == 0) {
+    return -1;
+  }
+  return stack[--sp];
+  
+}
+
+/*
+ * Returns the current size of the stack.
+ */
+int stackSize() {
+  return sp;
+}
+
+/*
+ * Tests if the stack is correctly implemented
+ */
+int main () {
+  int ch = getchar();
+
+  while (ch != EOF) {
+    if (ch == '(' || ch == '[' || ch == '{') {
+      if (ch == ')') {
+	push(ch);
+      }
+      else if (ch == ']') {
+	push(ch);
+      }
+      else {
+	push(ch);
+      }
+    }
+    else if (ch == ')' || ch == ']' || ch == '}') {
+      if (ch == '(') {
+	stack[--sp];
+      }
+      else if (ch == '[') {
+	stack[--sp];
+      }
+      else {
+	stack[--sp];
+      }
+    }
+  }
+}
